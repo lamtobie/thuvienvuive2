@@ -27,6 +27,7 @@ public class MemberDTO {
 
     }
 
+
     public String getHo() {
         return ho;
     }

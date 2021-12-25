@@ -33,7 +33,6 @@ public class BookListController implements Initializable {
             e.printStackTrace();
         }
     }
-
     @FXML
     private Button closeButton;
     @FXML
