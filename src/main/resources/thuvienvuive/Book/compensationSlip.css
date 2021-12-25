@@ -1,0 +1,40 @@
+#wrap{
+
+}
+
+.label, .ImageView, .button, .combo-box, .spinner, .date-picker, .combo-box, .text-field{
+    -fx-font-size: 16px;
+}
+
+.button{
+    -fx-cursor: hand;
+}
+
+#titlePane{
+    -fx-background-color: #fffb00;
+
+}
+
+#titleLabel{
+    -fx-font-weight: bold;
+    -fx-font-size: 30px;
+    -fx-text-fill: #020202;
+}
+
+#closeButton{
+    -fx-background-color: #fffb00;
+    -fx-border-width: 4px;
+    -fx-border-style: solid;
+    -fx-border-color: white;
+}
+
+#closeButton:hover{
+    -fx-background-color: rgb(250, 0, 0);
+}
+
+#mainPane{
+    -fx-border-width: 3px;
+    -fx-border-style: solid;
+    -fx-border-color: #fffb00;
+    -fx-padding-left: 10px;
+}
