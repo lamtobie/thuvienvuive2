@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class compensationSlipDAO {
-    Connection db = new Connection("localhost", "sa", "", "thuvienvuivee");
+    Connection db = new Connection("localhost", "sa", "sa", "thuvienvuive");
 
     public ObservableList<compensationSlipDTO> readListDAO () throws Exception {
         ObservableList<compensationSlipDTO> list = FXCollections.observableArrayList();
