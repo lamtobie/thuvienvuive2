@@ -34,6 +34,7 @@ public class deleteMemberDAO {
         return dsmember;
     }
 
+
     public int deleteMember(String ID) throws Exception{
         String qry = "delete from Member where IDMember='" + ID + "'";
         int res = 0;
