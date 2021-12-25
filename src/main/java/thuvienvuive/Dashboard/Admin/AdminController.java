@@ -1,7 +1,9 @@
 package thuvienvuive.Dashboard.Admin;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.stage.Modality;
 import thuvienvuive.Author.TacGiaBUS;
+import thuvienvuive.Login.LoginController;
 import thuvienvuive.Member.*;
 import thuvienvuive.Book.*;
 import javafx.event.EventHandler;
@@ -90,22 +92,11 @@ public class AdminController implements Initializable {
     }
     public void addMenu(){
         TreeItem<String> root=new TreeItem<>();
-//        TreeItem<String> rootGenres=new TreeItem<>("Thể loại");
-//        TreeItem<String> itemManagerGenres=new TreeItem<>("Quản lý thể loại");
-//
-//        TreeItem<String> rootAuthors=new TreeItem<>("Tác giả");
-//        TreeItem<String> itemManageAuthors=new TreeItem<>("Quản lý tác giả");
+
 
         TreeItem<String> rootMembers=new TreeItem<>("Thủ thư");
-        TreeItem<String> itemAddMember=new TreeItem<>("Thêm thủ thư");
-        TreeItem<String> itemDeleteMember=new TreeItem<>("Xóa thủ thư");
-        TreeItem<String> itemMembersList=new TreeItem<>("Danh sách thủ thư");
+        TreeItem<String> itemMembersList=new TreeItem<>("Quản lý thủ thư");
 
-//        TreeItem<String> rootBooks=new TreeItem<>("Sách");
-//        TreeItem<String> itemAddBook=new TreeItem<>("Thêm sách");
-//        TreeItem<String> itemEditBook=new TreeItem<>("Sửa thông tin sách");
-//        TreeItem<String> itemDeleteBook=new TreeItem<>("Xóa sách");
-//        TreeItem<String> itemBooksList=new TreeItem<>("Danh sách sách");
 
         TreeItem<String> rootStatistical=new TreeItem<>("Thống kê");
         TreeItem<String> itemLessBorrowBook=new TreeItem<>("Thống kê sách mượn ít");
@@ -118,7 +109,7 @@ public class AdminController implements Initializable {
         rootStatistical.setExpanded(true);
 
         root.getChildren().addAll(rootMembers,rootStatistical);
-        rootMembers.getChildren().addAll(itemAddMember,itemDeleteMember,itemMembersList);
+        rootMembers.getChildren().addAll(itemMembersList);
         rootStatistical.getChildren().addAll(itemLessBorrowBook,itemMoreBorrowBook,itemBrokenBook);
 
         root.setExpanded(true);
@@ -183,36 +174,11 @@ public class AdminController implements Initializable {
         if (node instanceof Text || (node instanceof TreeCell && ((TreeCell) node).getText() != null)) {
             name = (String) ((TreeItem)treeMenu.getSelectionModel().getSelectedItem()).getValue();
             switch (name){
-//                case "Quản lý thể loại":
-//                    openGenreManager(event);
-//                    break;
-//                case "Quản lý tác giả":
-//                    openAuthorManager(event);
-//                    break;
-                case "Thêm thủ thư":
-                    openAddUser(event);
-                    break;
-                case "Sửa thông tin thủ thư":
-                    openEditUser(event);
-                    break;
-                case "Xóa thủ thư":
-                    openDeleteUser(event);
-                    break;
-                case "Danh sách thủ thư":
+
+                case "Quản lý thủ thư":
                     openManageUser(event);
                     break;
-//                case"Thêm sách":
-//                    openAddBook(event);
-//                    break;
-//                case"Sửa thông tin sách":
-//                    openEditBook(event);
-//                    break;
-//                case "Xóa sách":
-//                    openDeleteBook(event);
-//                    break;
-//                case "Danh sách sách":
-//                    openManageBook(event);
-//                    break;
+
                 case "Thống kê sách mượn ít":
                     openBorrowBook(event);
                     break;
@@ -226,70 +192,7 @@ public class AdminController implements Initializable {
         }
 
     }
-    //Quản lý thể loại
-    public void openGenreManager(MouseEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(GenreController.class.getResource("GenreGUI.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage newstage = new Stage();
-        newstage.setTitle("Quản lý thể loại");
-        newstage.setScene(scene);
-        //ngăn tương tác với dashboard
-        Stage oldStage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        newstage.initModality(Modality.WINDOW_MODAL);
-        newstage.initOwner(oldStage);
-        //chạy newStage
-        newstage.show();
-    }
-    //Quản lý tác giả
-    public void openAuthorManager(MouseEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(AuthorController.class.getResource("AuthorManager.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage newstage = new Stage();
-        newstage.setTitle("Quản lý tác giả");
-        newstage.setScene(scene);
-        //ngăn tương tác với dashboard
-        Stage oldStage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        newstage.initModality(Modality.WINDOW_MODAL);
-        newstage.initOwner(oldStage);
-        //chạy newStage
-        newstage.show();
-    }
-    //Thêm thủ thư
-    public void openAddUser(MouseEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(addMemberController.class.getResource("AddMember.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage newstage = new Stage();
-        newstage.setTitle("Thêm nhân viên");
-        newstage.setScene(scene);
-        //ngăn tương tác với dashboard
-        Stage oldStage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        newstage.initModality(Modality.WINDOW_MODAL);
-        newstage.initOwner(oldStage);
-        //chạy newStage
-        newstage.show();
-    }
-    //Sửa thông tin thủ thư
-    public void openEditUser(MouseEvent e) throws  IOException{
-        System.out.println("Sửa thông tin thủ thư");
-    }
-    //Xóa thủ thư
-    public void openDeleteUser(MouseEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(deleteMemberController.class.getResource("deleteMember.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage newstage = new Stage();
-        newstage.setTitle("Xoá nhân viên");
-        newstage.setScene(scene);
-        //ngăn tương tác với dashboard
-        Stage oldStage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        newstage.initModality(Modality.WINDOW_MODAL);
-        newstage.initOwner(oldStage);
-        //chạy newStage
-        newstage.show();
-    }
+
     //Danh sách thủ thư
     public void openManageUser(MouseEvent e) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -305,55 +208,7 @@ public class AdminController implements Initializable {
         //chạy newStage
         newstage.show();
     }
-    //Thêm sách
-    public void openAddBook(MouseEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(AddBookController.class.getResource("AddNewBook.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage newstage = new Stage();
-        newstage.setTitle("Thêm sách");
-        newstage.setScene(scene);
-        //ngăn tương tác với dashboard
-        Stage oldStage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        newstage.initModality(Modality.WINDOW_MODAL);
-        newstage.initOwner(oldStage);
-        //chạy newStage
-        newstage.show();
-    }
-    //Sửa thông tin sách
-    public void openEditBook(MouseEvent e) throws IOException{
-        System.out.println("Sửa thông tin sách");
-    }
-    //Xóa sách
-    public void openDeleteBook(MouseEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(deleteBookController.class.getResource("deleteBook.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage newstage = new Stage();
-        newstage.setTitle("Xoá sách");
-        newstage.setScene(scene);
-        //ngăn tương tác với dashboard
-        Stage oldStage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        newstage.initModality(Modality.WINDOW_MODAL);
-        newstage.initOwner(oldStage);
-        //chạy newStage
-        newstage.show();
-    }
-    //Danh sách sách
-    public void openManageBook(MouseEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(BookListController.class.getResource("booksList.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage newstage = new Stage();
-        newstage.setTitle("Danh sách sách");
-        newstage.setScene(scene);
-        //ngăn tương tác với dashboard
-        Stage oldStage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        newstage.initModality(Modality.WINDOW_MODAL);
-        newstage.initOwner(oldStage);
-        //chạy newStage
-        newstage.show();
-    }
+
     public void openBorrowBook(MouseEvent e) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(ThongKeSachMuonItController.class.getResource("ThongKeSachMuonIt.fxml"));
@@ -395,5 +250,15 @@ public class AdminController implements Initializable {
         newstage.initOwner(oldStage);
         //chạy newStage
         newstage.show();
+    }
+    public void logout(ActionEvent e) throws Exception{
+        Stage stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(LoginController.class.getResource("LoginGUI.fxml"));
+        Parent root=loader.load();
+        Scene scene=new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Dashboard Admin");
+        System.out.printf("admin");
     }
 }
