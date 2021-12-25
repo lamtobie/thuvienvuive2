@@ -428,7 +428,7 @@ stage.close();
 
   
         // Sét thư mục bắt đầu nhìn thấy khi mở FileChooser
-        fileChooser.setInitialDirectory(new File("D:/Ảnh"));
+        fileChooser.setInitialDirectory(new File("D:/"));
 
   
         // Thêm các bộ lọc file vào

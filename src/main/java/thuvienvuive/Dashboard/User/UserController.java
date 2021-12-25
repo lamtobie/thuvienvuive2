@@ -6,6 +6,7 @@ import thuvienvuive.Author.AuthorMain;
 import thuvienvuive.Author.TacGiaBUS;
 import thuvienvuive.Author.TacGiaDAO;
 import thuvienvuive.Genre.*;
+import thuvienvuive.Login.LoginController;
 import thuvienvuive.Login.TaiKhoanDTO;
 import thuvienvuive.Member.MemberListController;
 import thuvienvuive.Member.*;
@@ -333,6 +334,16 @@ public class UserController implements Initializable {
         Image imageImage5=new Image(imageFile5.toURI().toString());
         imageNewBook5.setImage(imageImage5);
 
+    }
+    public void logout(ActionEvent e) throws Exception{
+        Stage stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(LoginController.class.getResource("LoginGUI.fxml"));
+        Parent root=loader.load();
+        Scene scene=new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Dashboard Admin");
+        System.out.printf("admin");
     }
 }
 

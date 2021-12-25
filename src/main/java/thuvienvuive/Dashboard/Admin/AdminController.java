@@ -1,9 +1,11 @@
 package thuvienvuive.Dashboard.Admin;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.stage.Modality;
 import thuvienvuive.Author.AuthorMain;
 import thuvienvuive.Author.TacGiaBUS;
 import thuvienvuive.Genre.GenreMain;
+import thuvienvuive.Login.LoginController;
 import thuvienvuive.Member.*;
 import thuvienvuive.Book.*;
 import javafx.event.EventHandler;
@@ -99,8 +101,6 @@ public class AdminController implements Initializable {
 //        TreeItem<String> itemManageAuthors=new TreeItem<>("Quản lý tác giả");
 
         TreeItem<String> rootMembers=new TreeItem<>("Thủ thư");
-        TreeItem<String> itemAddMember=new TreeItem<>("Thêm thủ thư");
-        TreeItem<String> itemDeleteMember=new TreeItem<>("Xóa thủ thư");
         TreeItem<String> itemMembersList=new TreeItem<>("Danh sách thủ thư");
 
 //        TreeItem<String> rootBooks=new TreeItem<>("Sách");
@@ -120,7 +120,7 @@ public class AdminController implements Initializable {
         rootStatistical.setExpanded(true);
 
         root.getChildren().addAll(rootMembers,rootStatistical);
-        rootMembers.getChildren().addAll(itemAddMember,itemDeleteMember,itemMembersList);
+        rootMembers.getChildren().addAll(itemMembersList);
         rootStatistical.getChildren().addAll(itemLessBorrowBook,itemMoreBorrowBook,itemBrokenBook);
 
         root.setExpanded(true);
@@ -227,6 +227,16 @@ public class AdminController implements Initializable {
             }
         }
 
+    }
+    public void logout(ActionEvent e) throws Exception{
+        Stage stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(LoginController.class.getResource("LoginGUI.fxml"));
+        Parent root=loader.load();
+        Scene scene=new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Dashboard Admin");
+        System.out.printf("admin");
     }
     //Quản lý thể loại
     public void openGenreManager(MouseEvent e) throws IOException {

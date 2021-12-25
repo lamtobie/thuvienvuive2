@@ -14,7 +14,7 @@ public class ConnectDB {
     Statement st = null;
     ResultSet rs = null;
   
-    private String connectionURL = "jdbc:sqlserver://localhost:1433;databaseName=thuvienvuivee;user=theminh;password=123"; 
+    private String connectionURL = "jdbc:sqlserver://localhost:1143;databaseName=thuvienvuive;user=sa;password=sa";
    
     		//"jdbc:mysql://" + hostName + ":3306/" + dbName + "?useUnicode=yes&characterEncoding=UTF-8";
    

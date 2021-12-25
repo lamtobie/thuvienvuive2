@@ -12,7 +12,7 @@ import java.util.*;
 
 public class BookListDAO {
 
-    Connection conn = new Connection("localhost", "sa", "", "thuvienvuivee");
+    Connection conn = new Connection("localhost", "sa", "sa", "thuvienvuive");
 
     public ObservableList<Book> docDB() throws Exception {
         ObservableList<Book> dsbook = FXCollections.observableArrayList();

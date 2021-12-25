@@ -52,27 +52,27 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="57.0" layoutY="169.0" prefHeight="26.0" prefWidth="167.0">
+      <TextField fx:id="idField" layoutX="57.0" layoutY="169.0" prefHeight="26.0" prefWidth="167.0">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <TextField layoutX="57.0" layoutY="227.0" prefHeight="26.0" prefWidth="167.0">
+      <TextField fx:id="nameField" layoutX="57.0" layoutY="227.0" prefHeight="26.0" prefWidth="167.0">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <Button layoutX="33.0" layoutY="314.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="64.0" text="Thêm" />
-      <Button layoutX="109.0" layoutY="314.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="64.0" text="Sửa" />
-      <Button layoutX="184.0" layoutY="314.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="64.0" text="Xóa" />
+      <Button layoutX="33.0" layoutY="314.0" mnemonicParsing="false" onAction="#addType" prefHeight="26.0" prefWidth="64.0" text="Thêm" />
+      <Button layoutX="109.0" layoutY="314.0" mnemonicParsing="false" onAction="#editType" prefHeight="26.0" prefWidth="64.0" text="Sửa" />
+      <Button layoutX="184.0" layoutY="314.0" mnemonicParsing="false" onAction="#deleteType" prefHeight="26.0" prefWidth="64.0" text="Xóa" />
       <ScrollPane layoutX="266.0" layoutY="100.0" prefHeight="288.0" prefWidth="324.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="284.0" prefWidth="324.0">
                <children>
-                  <TableView prefHeight="288.0" prefWidth="324.0">
+                  <TableView fx:id="tableView" onMouseClicked="#handleClickTableView" prefHeight="288.0" prefWidth="324.0">
                     <columns>
-                      <TableColumn prefWidth="154.40002137422562" text="ID" />
-                      <TableColumn prefWidth="165.59999084472656" text="Name" />
+                      <TableColumn fx:id="idColumn" prefWidth="154.40002137422562" text="ID" />
+                      <TableColumn fx:id="nameColumn" prefWidth="165.59999084472656" text="Name" />
                     </columns>
                   </TableView>
                </children>
