@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="434.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thuvienvuive.Member.addMemberController">
+   <children>
+      <Pane prefHeight="94.0" prefWidth="434.0" style="-fx-background-color: #757DFA;">
+         <children>
+            <ImageView fx:id="memberIcon" fitHeight="83.0" fitWidth="94.0" layoutX="87.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <effect>
+                  <Glow />
+               </effect>
+               <image>
+                  <Image url="@../../../../image/member.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="170.0" layoutY="26.0" prefHeight="43.0" prefWidth="146.0" text="Add Member" textAlignment="CENTER" textFill="#ff5a5a" textOverrun="WORD_ELLIPSIS">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#f51919" />
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="exitButton" fitHeight="50.0" fitWidth="68.0" layoutX="370.0" layoutY="22.0"  pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../image/exit.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </Pane>
+      <GridPane layoutY="94.0" prefHeight="420.0" prefWidth="416.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="159.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="325.0" minWidth="10.0" prefWidth="275.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="104.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="104.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="104.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="104.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="104.0" minHeight="1.0" prefHeight="33.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="73.0" minHeight="10.0" prefHeight="149.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Fist Name :" textAlignment="JUSTIFY" textOverrun="CLIP" GridPane.halignment="CENTER">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Last Name :" textAlignment="JUSTIFY" textOverrun="CLIP" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Phone Number :" textAlignment="JUSTIFY" textOverrun="CLIP" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Email :" textAlignment="JUSTIFY" textOverrun="CLIP" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Gender :" textAlignment="JUSTIFY" textOverrun="CLIP" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Profile Picture :" textAlignment="JUSTIFY" textOverrun="CLIP" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField prefHeight="33.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" />
+            <TextField prefHeight="33.0" prefWidth="275.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField prefHeight="33.0" prefWidth="275.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField prefHeight="33.0" prefWidth="275.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox prefWidth="150.0" promptText="Male" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <children>
+                  <Label layoutX="120.0" layoutY="26.0" prefHeight="21.0" prefWidth="146.0" text="Your picture path/" />
+                  <Button layoutY="21.0" mnemonicParsing="false" text="Select Picture" />
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+      <Pane layoutY="513.0" prefHeight="73.0" prefWidth="434.0" style="-fx-background-color: #757DFA;">
+         <children>
+            <Button layoutX="146.0" layoutY="21.0" mnemonicParsing="false" text="Add New Member" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

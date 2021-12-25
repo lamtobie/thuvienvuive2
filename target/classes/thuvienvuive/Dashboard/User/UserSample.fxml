@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thuvienvuive.Dashboard.User.UserController">
+   <left>
+      <VBox prefHeight="400.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="100.0" prefWidth="190.0" styleClass="menu--header">
+               <children>
+                  <Label alignment="CENTER" layoutX="66.0" layoutY="24.0" styleClass="menu--header__label" text="Library" textAlignment="CENTER" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="24.0" />
+                  <ImageView fx:id="imageIcon" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0">
+                     <image>
+                        <Image url="@../../../../../image/OIP.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <TreeView fx:id="treeMenu" prefHeight="441.0" prefWidth="190.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </TreeView>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Chào mừng trở lại" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="5.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="25.0" layoutY="46.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: orange;" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="75.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Sách" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="countBooks" layoutX="64.0" layoutY="60.0" text="99" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="204.0" layoutY="46.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: green;" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="75.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Nhân viên" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="countMembers" layoutX="64.0" layoutY="60.0" text="99" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="393.0" layoutY="46.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #9b59b6;" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Tác giả" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="countAuthors" layoutX="64.0" layoutY="60.0" text="99" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="46.0" layoutY="266.0" prefHeight="200.0" prefWidth="550.0" style="-fx-background-color: #446cb3;" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Sách mới nhất" textFill="#f7f7f7" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="imageNewBook1" fitHeight="150.0" fitWidth="100.0" layoutX="14.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" />
+                  <ImageView fx:id="imageNewBook2" fitHeight="150.0" fitWidth="100.0" layoutX="121.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="115.0" />
+                  <ImageView fx:id="imageNewBook3" fitHeight="150.0" fitWidth="100.0" layoutX="249.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="230.0" />
+                  <ImageView fx:id="imageNewBook4" fitHeight="150.0" fitWidth="100.0" layoutX="336.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="345.0" />
+                  <ImageView fx:id="imageNewBook5" fitHeight="150.0" fitWidth="100.0" layoutX="436.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+               </children>
+            </AnchorPane>
+            <Label fx:id="userNameLabel" layoutX="161.0" layoutY="6.0" text="User" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="6.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="711.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thuvienvuive.Author.AuthorController">
+    <children>
+        <Label layoutX="38.0" layoutY="323.0" prefHeight="18.0" prefWidth="70.0" text="Ghi chú" />
+        <Label layoutX="31.0" layoutY="114.0" text="ID:" />
+        <Label layoutX="33.0" layoutY="204.0" text="Tên" />
+        <Label layoutX="31.0" layoutY="262.0" text="Thông tin" />
+        <Label layoutX="33.0" layoutY="148.0" text="Họ" />
+        <Button layoutX="15.0" layoutY="462.0" mnemonicParsing="false" onAction="#addAuthor" prefHeight="26.0" prefWidth="81.0" text="Thêm" />
+        <Button layoutX="103.0" layoutY="462.0" mnemonicParsing="false" onAction="#changeAuthor" prefHeight="26.0" prefWidth="82.0" text="Sửa" />
+        <Button layoutX="194.0" layoutY="462.0" mnemonicParsing="false" onAction="#deleteAuthor" prefHeight="26.0" prefWidth="82.0" text="Xóa" />
+        <TextField fx:id="idField" layoutX="56.0" layoutY="110.0" />
+        <TextField fx:id="hoField" layoutX="33.0" layoutY="166.0" prefHeight="26.0" prefWidth="234.0" />
+        <TextField fx:id="tenField" layoutX="33.0" layoutY="229.0" prefHeight="26.0" prefWidth="234.0" />
+        <TextField fx:id="thongtinField" layoutX="33.0" layoutY="287.0" prefHeight="26.0" prefWidth="234.0" />
+        <TableView fx:id="tableView" layoutX="289.0" layoutY="101.0" onMouseClicked="#handleClickTableView" prefHeight="411.0" prefWidth="422.0">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="71.199951171875" text="ID" />
+                <TableColumn fx:id="hoColumn" prefWidth="91.20001220703125" text="Họ" />
+                <TableColumn fx:id="tenColoumn" prefWidth="84.79989624023438" text="Tên" />
+                <TableColumn fx:id="thongtinColumn" minWidth="8.0" prefWidth="91.2000732421875" text="Thông tin" />
+                <TableColumn fx:id="ghichuColumn" prefWidth="88.7999267578125" text="Ghi chú" />
+            </columns>
+        </TableView>
+        <TextArea fx:id="ghichuField" layoutX="33.0" layoutY="341.0" prefHeight="58.0" prefWidth="234.0" />
+        <Button layoutX="623.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="90.0" style="-fx-background-color: #013243; -fx-font-weight: Bolder;" text="X" textFill="#efefef" />
+        <Label layoutY="-1.0" prefHeight="82.0" prefWidth="615.0" style="-fx-background-color: #013243; -fx-font-weight: bolder;" text="                                              Manage Authors" textFill="WHITE">
+            <font>
+                <Font size="23.0" />
+            </font>
+        </Label>
+        <ImageView fx:id="bookIcon" fitHeight="82.0" fitWidth="116.0" layoutX="174.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../image/book_pencil.png" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>
+

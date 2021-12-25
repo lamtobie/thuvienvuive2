@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="wrap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="229.0" prefWidth="422.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thuvienvuive.Member.deleteMemberController">
+   <children>
+      <AnchorPane fx:id="titlePane" prefHeight="81.0" prefWidth="335.0" style="-fx-background-color: #34c996;">
+         <children>
+            <ImageView fx:id="titleImage" fitHeight="50.0" fitWidth="62.0" layoutX="62.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../image/team.png" />
+               </image></ImageView>
+            <Label fx:id="titleLabel" layoutX="137.0" layoutY="23.0" text="Hủy thẻ độc giả" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="39.0" layoutY="115.0" prefHeight="25.0" prefWidth="71.0" text="Nhập ID:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="closePane" layoutX="342.0" prefHeight="81.0" prefWidth="80.0" style="-fx-background-color: #34c996;">
+         <children>
+            <Button fx:id="closeButton" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #34c996;" text="X" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Button fx:id="deleteButton" layoutX="10.0" layoutY="184.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="402.0" text="Xóa">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Spinner fx:id="deleteSpinner" layoutX="125.0" layoutY="115.0" prefHeight="25.0" prefWidth="271.0" />
+      <TextField fx:id="deleteField" layoutX="125.0" layoutY="115.0" prefHeight="25.0" prefWidth="241.0" />
+   </children>
+</AnchorPane>

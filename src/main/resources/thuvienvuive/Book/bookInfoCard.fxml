@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="533.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thuvienvuive.Book.bookInfoCardController">
+    <children>
+        <AnchorPane fx:id="titleBar" prefHeight="80.0" prefWidth="436.0" style="-fx-background-color: Orange;">
+            <children>
+                <Label fx:id="titleLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="138.0" layoutY="23.0" prefHeight="42.0" prefWidth="235.0" text="Book Info Card" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font size="28.0" />
+                    </font>
+                </Label>
+            <ImageView fx:id="iconImage" fitHeight="70.0" fitWidth="138.0" layoutX="68.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../image/bookIcon.png" />
+               </image>
+            </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="exitBar" layoutX="453.0" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: Orange;">
+            <children>
+                <Button fx:id="exitButton" layoutX="17.0" layoutY="16.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: Orange;" text="X" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+        <TextArea fx:id="cmt" layoutX="23.0" layoutY="396.0" prefHeight="110.0" prefWidth="487.0" promptText="this book will teach about basic English skill" />
+        <AnchorPane fx:id="bookInfo" layoutX="228.0" layoutY="128.0" prefHeight="253.0" prefWidth="281.0">
+            <children>
+                <Label layoutX="9.0" layoutY="134.0" prefHeight="21.0" prefWidth="250.0" text="Ten sach" />
+                <Label layoutX="9.0" layoutY="106.0" prefHeight="21.0" prefWidth="250.0" text="The loai" />
+                <Label layoutX="9.0" layoutY="37.0" prefHeight="21.0" prefWidth="250.0" text="Danh muc" />
+                <Label layoutX="9.0" layoutY="229.0" prefHeight="21.0" prefWidth="250.0" text="Ngay xuat ban" />
+                <Label layoutX="9.0" layoutY="71.0" prefHeight="21.0" prefWidth="250.0" text="Ten tac gia" />
+                <Label layoutX="9.0" layoutY="198.0" prefHeight="21.0" prefWidth="250.0" text="Label" />
+                <Label layoutX="9.0" layoutY="165.0" prefHeight="21.0" prefWidth="250.0" text="Label" />
+                <Label layoutX="9.0" layoutY="4.0" prefHeight="21.0" prefWidth="250.0" text="BookID" />
+            </children>
+        </AnchorPane>
+        <ImageView fx:id="bookImage" fitHeight="253.0" fitWidth="200.0" layoutX="23.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true" />
+    </children>
+</AnchorPane>

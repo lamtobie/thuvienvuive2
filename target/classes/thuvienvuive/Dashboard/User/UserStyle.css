@@ -1,0 +1,11 @@
+.menu--header{
+    -fx-background-color:#013243;
+}
+.menu--header__icon{
+
+}
+.menu--header__label{
+    -fx-font-size:20px;
+    -fx-font-weight:600;
+    -fx-text-fill:white;
+}

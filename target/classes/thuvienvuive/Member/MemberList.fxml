@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="wrap" prefHeight="600.0" prefWidth="1020.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thuvienvuive.Member.MemberListController">
+      <AnchorPane fx:id="titlePane" prefHeight="80.0" prefWidth="1020.0">
+         <children>
+            <Label fx:id="titleLabel" layoutX="297.0" layoutY="2.0" prefHeight="76.0" prefWidth="444.0" text="Danh Sách Thành Viên">
+               <graphic>
+                  <ImageView fx:id="titleIcon" fitHeight="76.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../image/member_icon.png" />
+                     </image>
+               </ImageView>
+               </graphic>
+            </Label>
+            <Button fx:id="closeButton" layoutX="911.0" layoutY="6.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="75.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="6.0">
+               <graphic>
+                  <ImageView fx:id="closeIcon" fitHeight="51.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../image/exit_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="mainPane" prefHeight="520.0" prefWidth="1020.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+         <children>
+            <AnchorPane fx:id="searchPane" layoutX="19.0" layoutY="19.0" prefHeight="46.0" prefWidth="666.0" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0">
+               <children>
+                  <TextField fx:id="searchField" layoutX="274.0" layoutY="5.0" prefHeight="40.0" prefWidth="224.0" />
+                  <Label fx:id="searchLabel" layoutX="14.0" layoutY="5.0" prefHeight="40.0" text="Tìm Kiếm: ">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="searchBox" layoutX="94.0" layoutY="5.0" prefHeight="40.0" prefWidth="172.0" promptText="Chọn " />
+                  <Button fx:id="searchButton" layoutX="519.0" layoutY="2.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="133.0" text="Tìm Kiếm">
+                  <graphic>
+                     <ImageView fx:id="searchIcon" fitHeight="33.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../../../../image/search_icon.png" />
+                        </image>
+                     </ImageView>
+                  </graphic></Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </AnchorPane>
+            <AnchorPane fx:id="detailsPane" layoutX="681.0" layoutY="102.0" prefHeight="418.0" prefWidth="304.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="96.0">
+               <children>
+                  <ImageView fx:id="memberAvavtar" fitHeight="99.0" fitWidth="206.0" layoutX="49.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0" />
+                  <TreeView fx:id="informationView" layoutX="22.0" layoutY="99.0" prefHeight="313.0" prefWidth="260.0" AnchorPane.bottomAnchor="0.0" />
+               </children>
+         </AnchorPane>
+            <AnchorPane fx:id="memberListPane" layoutX="19.0" layoutY="99.0" prefHeight="452.0" prefWidth="666.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="96.0">
+               <children>
+                  <TableView fx:id="memberList" fixedCellSize="0.0" prefHeight="440.0" prefWidth="763.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                        <TableColumn fx:id="IDColumn" text="ID" />
+                        <TableColumn fx:id="lastNameColumn" prefWidth="104.0" text="Họ" />
+                        <TableColumn fx:id="firstNameColumn" prefWidth="107.0" text="Tên" />
+                        <TableColumn fx:id="phoneNumberColumn" prefWidth="116.0" text="Số Điện Thoại" />
+                        <TableColumn fx:id="emailColumn" minWidth="0.0" prefWidth="167.0" text="Email" />
+                        <TableColumn fx:id="genderColumn" text="Giới Tính" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+   </AnchorPane>
+</AnchorPane>

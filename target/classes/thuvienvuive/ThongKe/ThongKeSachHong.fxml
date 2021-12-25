@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thuvienvuive.ThongKe.ThongKeSachHongController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="500.0" prefWidth="200.0" style="-fx-border-color: black;">
+               <children>
+                  <Text layoutX="15.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thống kê sách hỏng" wrappingWidth="170.78125">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="25.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Từ ngày:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <DatePicker fx:id="FromDate" layoutX="13.0" layoutY="139.0" />
+                  <DatePicker fx:id="ToDate" layoutX="13.0" layoutY="238.0" />
+                  <Text layoutX="25.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Đến ngày:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="ThongKe" layoutX="58.0" layoutY="288.0" mnemonicParsing="false" text="Thống kê" />
+                  <Button fx:id="XuatPDF" layoutX="16.0" layoutY="329.0" mnemonicParsing="false" text="Xuất ra pdf" />
+                  <Button fx:id="XuatExcel" layoutX="100.0" layoutY="329.0" mnemonicParsing="false" text="Xuất ra excel" />
+               </children>
+               <cursor>
+                  <Cursor fx:constant="N_RESIZE" />
+               </cursor>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Pane>
+            <TableView fx:id="table" layoutX="223.0" layoutY="132.0" prefHeight="331.0" prefWidth="555.0">
+               <columns>
+                  <TableColumn fx:id="IDPhieuMuon" prefWidth="97.0" text="IDPhieuMuon" />
+                  <TableColumn fx:id="IDTheLoai" prefWidth="74.0" text="IDTheLoai" />
+                  <TableColumn fx:id="TenSach" prefWidth="155.0" text="Tên sách" />
+                  <TableColumn fx:id="IDMember" prefWidth="73.0" text="IDMember" />
+                  <TableColumn fx:id="IDTacGia" prefWidth="65.0" text="IDTacGia" />
+                  <TableColumn fx:id="NgayHong" prefWidth="90.0" text="NgayLap" />
+               </columns>
+            </TableView>
+            <Text layoutX="438.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sách hỏng">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="FromTo" layoutX="396.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Từ ngày xx-xx-xxxx đến xx-xx-xxxx">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Button layoutX="747.0" layoutY="17.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="31.0" text="X">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+   </center>
+</BorderPane>
