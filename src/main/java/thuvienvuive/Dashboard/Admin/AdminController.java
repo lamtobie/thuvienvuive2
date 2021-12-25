@@ -1,9 +1,9 @@
 package thuvienvuive.Dashboard.Admin;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.stage.Modality;
+import thuvienvuive.Author.AuthorMain;
 import thuvienvuive.Author.TacGiaBUS;
-import thuvienvuive.Login.LoginController;
+import thuvienvuive.Genre.GenreMain;
 import thuvienvuive.Member.*;
 import thuvienvuive.Book.*;
 import javafx.event.EventHandler;
@@ -195,18 +195,15 @@ public class AdminController implements Initializable {
 
     //Danh sách thủ thư
     public void openManageUser(MouseEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(ManagerUserController.class.getResource("ManagerUser.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+
         Stage newstage = new Stage();
-        newstage.setTitle("Danh sách nhân viên");
-        newstage.setScene(scene);
+        MemberListMain sreen = new MemberListMain();
         //ngăn tương tác với dashboard
         Stage oldStage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         newstage.initModality(Modality.WINDOW_MODAL);
         newstage.initOwner(oldStage);
         //chạy newStage
-        newstage.show();
+        sreen.start(newstage);
     }
 
     public void openBorrowBook(MouseEvent e) throws IOException {
@@ -261,4 +258,5 @@ public class AdminController implements Initializable {
         stage.setTitle("Dashboard Admin");
         System.out.printf("admin");
     }
+
 }

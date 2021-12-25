@@ -14,7 +14,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thuvienvuive.Genre.GenreController">
    <children>
-      <Pane prefHeight="62.0" prefWidth="490.0" style="-fx-background-color: gray;">
+      <Pane prefHeight="61.0" prefWidth="490.0" style="-fx-background-color: gray;">
          <children>
             <Label layoutX="203.0" layoutY="13.0" text="Quản lý thể loại sách" textFill="WHITE">
                <font>
@@ -28,21 +28,21 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane layoutX="490.0" prefHeight="62.0" prefWidth="110.0" style="-fx-background-color: gray;">
+      <Pane layoutX="491.0" layoutY="-4.0" prefHeight="68.0" prefWidth="109.0" style="-fx-background-color: gray;">
          <children>
-            <ImageView fx:id="closeIcon" fitHeight="26.0" fitWidth="33.0" layoutX="36.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="closeIcon" fitHeight="26.0" fitWidth="22.0" layoutX="43.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../image/close.png" />
                </image>
             </ImageView>
          </children>
       </Pane>
-      <Label layoutX="57.0" layoutY="200.0" text="Tên loại sách:">
+      <Label layoutX="57.0" layoutY="200.0" text="Name:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="57.0" layoutY="142.0" text="Mã loại sách:">
+      <Label layoutX="57.0" layoutY="142.0" text="ID:">
          <font>
             <Font size="18.0" />
          </font>
@@ -66,8 +66,8 @@
                <children>
                   <TableView fx:id="tableView" onMouseClicked="#handleClickTableView" prefHeight="288.0" prefWidth="324.0">
                     <columns>
-                      <TableColumn fx:id="idColumn" prefWidth="154.40002137422562" text="Mã loại sách" />
-                      <TableColumn fx:id="nameColumn" prefWidth="165.59999084472656" text="Tên loại sách" />
+                      <TableColumn fx:id="idColumn" prefWidth="154.40002137422562" text="ID" />
+                      <TableColumn fx:id="nameColumn" prefWidth="165.59999084472656" text="Name" />
                     </columns>
                   </TableView>
                </children>

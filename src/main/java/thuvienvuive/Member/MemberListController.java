@@ -84,7 +84,7 @@ public class MemberListController implements Initializable {
         setDefault();
         try {
             show(List);
-        } catch (Exception e) {
+        } catch (Exception e){
             e.printStackTrace();
         }
         handler();

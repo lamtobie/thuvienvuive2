@@ -29,7 +29,6 @@ public class deleteMemberController implements Initializable {
         return List;
     }
 
-
     @FXML
     ImageView titleImage;
 

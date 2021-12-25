@@ -2,10 +2,10 @@ package thuvienvuive.Dashboard.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.stage.Modality;
+import thuvienvuive.Author.AuthorMain;
 import thuvienvuive.Author.TacGiaBUS;
 import thuvienvuive.Author.TacGiaDAO;
 import thuvienvuive.Genre.*;
-import thuvienvuive.Login.LoginController;
 import thuvienvuive.Login.TaiKhoanDTO;
 import thuvienvuive.Member.MemberListController;
 import thuvienvuive.Member.*;
@@ -184,150 +184,112 @@ public class UserController implements Initializable {
 
     }
     public void openGenreManager(MouseEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(GenreController.class.getResource("GenreGUI.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
         Stage newstage = new Stage();
-        newstage.setTitle("Quản lý thể loại");
-        newstage.setScene(scene);
+        GenreMain sreen = new GenreMain();
+
         //ngăn tương tác với dashboard
         Stage oldStage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         newstage.initModality(Modality.WINDOW_MODAL);
         newstage.initOwner(oldStage);
         //chạy newStage
-        newstage.show();
+        sreen.start(newstage);
     }
     public void openAuthorManager(MouseEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(AuthorController.class.getResource("AuthorManager.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
         Stage newstage = new Stage();
-        newstage.setTitle("Quản lý tác giả");
-        newstage.setScene(scene);
+        AuthorMain sreen = new AuthorMain();
         //ngăn tương tác với dashboard
         Stage oldStage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         newstage.initModality(Modality.WINDOW_MODAL);
         newstage.initOwner(oldStage);
         //chạy newStage
-        newstage.show();
+        sreen.start(newstage);
     }
     public void openAddUser(MouseEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(addMemberController.class.getResource("AddMember.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
         Stage newstage = new Stage();
-        newstage.setTitle("Thêm thành viên");
-        newstage.setScene(scene);
+        addMemberMain sreen = new addMemberMain();
         //ngăn tương tác với dashboard
         Stage oldStage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         newstage.initModality(Modality.WINDOW_MODAL);
         newstage.initOwner(oldStage);
         //chạy newStage
-        newstage.show();
+        sreen.start(newstage);
     }
     public void openEditUser(MouseEvent e) throws IOException{
         System.out.println("Sửa thông tin đọc giả");
     }
     public void openDeleteUser(MouseEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(deleteMemberController.class.getResource("deleteMember.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
         Stage newstage = new Stage();
-        newstage.setTitle("Xoá thành viên");
-        newstage.setScene(scene);
+        deleteMemberMain sreen = new deleteMemberMain();
         //ngăn tương tác với dashboard
         Stage oldStage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         newstage.initModality(Modality.WINDOW_MODAL);
         newstage.initOwner(oldStage);
         //chạy newStage
-        newstage.show();
+        sreen.start(newstage);
     }
     public void openManageUser(MouseEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(MemberListController.class.getResource("MemberList.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
         Stage newstage = new Stage();
-        newstage.setTitle("Danh sách thành viên");
-        newstage.setScene(scene);
+        MemberListMain sreen = new MemberListMain();
         //ngăn tương tác với dashboard
         Stage oldStage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         newstage.initModality(Modality.WINDOW_MODAL);
         newstage.initOwner(oldStage);
         //chạy newStage
-        newstage.show();
+        sreen.start(newstage);
     }
     public void openAddBook(MouseEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(AddBookController.class.getResource("AddNewBook.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
         Stage newstage = new Stage();
-        newstage.setTitle("Thêm sách");
-        newstage.setScene(scene);
+        addBookMain sreen = new addBookMain();
         //ngăn tương tác với dashboard
         Stage oldStage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         newstage.initModality(Modality.WINDOW_MODAL);
         newstage.initOwner(oldStage);
         //chạy newStage
-        newstage.show();
+        sreen.start(newstage);
     }
     public void openEditBook(MouseEvent e) throws IOException{
         System.out.println("Sửa thông tin sách");
     }
     public void openDeleteBook(MouseEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(deleteBookController.class.getResource("deleteBook.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+
         Stage newstage = new Stage();
-        newstage.setTitle("Xoá sách");
-        newstage.setScene(scene);
+        deleteBookMain sreen = new deleteBookMain();
         //ngăn tương tác với dashboard
         Stage oldStage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         newstage.initModality(Modality.WINDOW_MODAL);
         newstage.initOwner(oldStage);
         //chạy newStage
-        newstage.show();
+        sreen.start(newstage);
     }
     public void openManageBook(MouseEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(BookListController.class.getResource("booksList.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
         Stage newstage = new Stage();
-        newstage.setTitle("Danh sách sách");
-        newstage.setScene(scene);
+        booksListMain sreen = new booksListMain();
         //ngăn tương tác với dashboard
         Stage oldStage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         newstage.initModality(Modality.WINDOW_MODAL);
         newstage.initOwner(oldStage);
         //chạy newStage
-        newstage.show();
+        sreen.start(newstage);
     }
     public void openIssueBook(MouseEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(bookIssueController.class.getResource("bookIssue.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
         Stage newstage = new Stage();
-        newstage.setTitle("Cho mượn sách");
-        newstage.setScene(scene);
+        bookIssueMain sreen = new bookIssueMain();
         //ngăn tương tác với dashboard
         Stage oldStage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         newstage.initModality(Modality.WINDOW_MODAL);
         newstage.initOwner(oldStage);
         //chạy newStage
-        newstage.show();
+        sreen.start(newstage);
     }
     public void openReturnBook(MouseEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(returnBookController.class.getResource("returnBook.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
         Stage newstage = new Stage();
-        newstage.setTitle("Hoàn trả sách");
-        newstage.setScene(scene);
+        returnBookMain returnBook = new returnBookMain();
         //ngăn tương tác với dashboard
         Stage oldStage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         newstage.initModality(Modality.WINDOW_MODAL);
         newstage.initOwner(oldStage);
         //chạy newStage
-        newstage.show();
+        returnBook.start(newstage);
     }
     static NhanVienDTO user;
     public void setUserName(NhanVienDTO nhanVienDTO){
@@ -382,5 +344,6 @@ public class UserController implements Initializable {
         stage.setTitle("Dashboard Admin");
         System.out.printf("admin");
     }
+
 }
 

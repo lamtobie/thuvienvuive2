@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+
 <AnchorPane fx:id="wrap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="229.0" prefWidth="422.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thuvienvuive.Member.deleteMemberController">
    <children>
       <AnchorPane fx:id="titlePane" prefHeight="81.0" prefWidth="335.0" style="-fx-background-color: #34c996;">

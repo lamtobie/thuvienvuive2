@@ -1,4 +1,4 @@
-package thuvienvuive.Genre;
+6.	package thuvienvuive.Genre;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
