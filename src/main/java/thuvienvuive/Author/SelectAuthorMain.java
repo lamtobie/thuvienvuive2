@@ -3,6 +3,7 @@ package thuvienvuive.Author;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.scene.Scene;
 
 
@@ -14,6 +15,7 @@ public class SelectAuthorMain extends Application {
             Scene scene = new Scene(fxmlLoader.load());
             primaryStage.setTitle("Author List");
             primaryStage.setScene(scene);
+           primaryStage.initStyle(StageStyle.UNDECORATED);
             primaryStage.show();
         } catch(Exception e) {
             e.printStackTrace();
