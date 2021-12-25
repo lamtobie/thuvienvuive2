@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="434.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thuvienvuive.Member.addMemberController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="434.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thuvienvuive.Member.addMemberController">
    <children>
       <Pane prefHeight="94.0" prefWidth="434.0" style="-fx-background-color: #757DFA;">
          <children>
@@ -22,7 +31,7 @@
                   <Image url="@../../../../image/member.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="170.0" layoutY="26.0" prefHeight="43.0" prefWidth="146.0" text="Add Member" textAlignment="CENTER" textFill="#ff5a5a" textOverrun="WORD_ELLIPSIS">
+            <Label alignment="CENTER" layoutX="170.0" layoutY="26.0" prefHeight="43.0" prefWidth="146.0" text="Thêm độc giả" textAlignment="CENTER" textFill="#ff5a5a" textOverrun="WORD_ELLIPSIS">
                <effect>
                   <Lighting>
                      <bumpInput>
@@ -37,11 +46,7 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <ImageView fx:id="exitButton" fitHeight="50.0" fitWidth="68.0" layoutX="370.0" layoutY="22.0"  pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../image/exit.png" />
-               </image>
-            </ImageView>
+            <Button fx:id="exitButton" contentDisplay="CENTER" layoutX="337.0" layoutY="26.0" mnemonicParsing="false" onAction="#exit" prefHeight="53.0" prefWidth="29.0" />
          </children>
          <effect>
             <ColorAdjust />
@@ -61,17 +66,17 @@
           <RowConstraints maxHeight="73.0" minHeight="10.0" prefHeight="149.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" text="Fist Name :" textAlignment="JUSTIFY" textOverrun="CLIP" GridPane.halignment="CENTER">
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Tên :" textAlignment="JUSTIFY" textOverrun="CLIP" GridPane.halignment="CENTER">
                <font>
                   <Font name="Bookman Old Style Bold" size="18.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" text="Last Name :" textAlignment="JUSTIFY" textOverrun="CLIP" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Họ và tên đệm :" textAlignment="JUSTIFY" textOverrun="CLIP" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" text="Phone Number :" textAlignment="JUSTIFY" textOverrun="CLIP" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Số điện thoại :" textAlignment="JUSTIFY" textOverrun="CLIP" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -81,32 +86,36 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" text="Gender :" textAlignment="JUSTIFY" textOverrun="CLIP" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Giới tính :" textAlignment="JUSTIFY" textOverrun="CLIP" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" text="Profile Picture :" textAlignment="JUSTIFY" textOverrun="CLIP" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Ảnh đại diện :" textAlignment="JUSTIFY" textOverrun="CLIP" GridPane.halignment="CENTER" GridPane.rowIndex="5">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <TextField prefHeight="33.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" />
-            <TextField prefHeight="33.0" prefWidth="275.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField prefHeight="33.0" prefWidth="275.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField prefHeight="33.0" prefWidth="275.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <ComboBox prefWidth="150.0" promptText="Male" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="fName" prefHeight="33.0" prefWidth="27.0" promptText="Nhập không dấu" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" />
+            <TextField fx:id="lName" prefHeight="33.0" prefWidth="275.0" promptText="Nhập không dấu" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="phoneTxt" prefHeight="33.0" prefWidth="275.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="mailTxt" prefHeight="33.0" prefWidth="275.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="genderCB" prefWidth="150.0" promptText="Chọn giới tính" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <children>
-                  <Label layoutX="120.0" layoutY="26.0" prefHeight="21.0" prefWidth="146.0" text="Your picture path/" />
-                  <Button layoutY="21.0" mnemonicParsing="false" text="Select Picture" />
+                  <Label fx:id="linkImage" layoutX="120.0" layoutY="26.0" prefHeight="21.0" prefWidth="146.0" />
+                  <Button fx:id="fileChoice" layoutX="14.0" layoutY="24.0" mnemonicParsing="false" text="Chọn ảnh" />
+                  <Label fx:id="linkImage1" layoutX="120.0" layoutY="3.0" prefHeight="21.0" prefWidth="113.0" text="Đường dẫn ảnh:" />
                </children>
             </Pane>
          </children>
       </GridPane>
       <Pane layoutY="513.0" prefHeight="73.0" prefWidth="434.0" style="-fx-background-color: #757DFA;">
          <children>
-            <Button layoutX="146.0" layoutY="21.0" mnemonicParsing="false" text="Add New Member" />
+            <Button fx:id="addMemButton" layoutX="179.0" layoutY="24.0" mnemonicParsing="false" onAction="#setAddMem" text="Thêm độc giả">
+               <effect>
+                  <DropShadow />
+               </effect></Button>
          </children>
       </Pane>
    </children>
