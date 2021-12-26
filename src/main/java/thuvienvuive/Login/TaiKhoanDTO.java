@@ -10,6 +10,16 @@ public class TaiKhoanDTO {
         this.IDNhanVien = IDNhanVien;
     }
 
+    @Override
+    public String toString() {
+        return "TaiKhoanDTO{" +
+                "IDNhanVien='" + IDNhanVien + '\'' +
+                ", TenTaiKhoan='" + TenTaiKhoan + '\'' +
+                ", MatKhau='" + MatKhau + '\'' +
+                ", IDPhanQuyen='" + IDPhanQuyen + '\'' +
+                '}';
+    }
+
     public TaiKhoanDTO(String IDNhanVien, String tenTaiKhoan, String matKhau, String IDPhanQuyen) {
         this.IDNhanVien = IDNhanVien;
         TenTaiKhoan = tenTaiKhoan;

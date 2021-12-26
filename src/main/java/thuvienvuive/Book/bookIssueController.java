@@ -18,6 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import thuvienvuive.Login.LoginController;
 import thuvienvuive.Member.MemberDTO;
 import thuvienvuiveReport.PDF;
 
@@ -33,7 +34,7 @@ public class bookIssueController implements Initializable {
     static int maxID = 0;
     bookIssueDAO bookIssueDAO = new bookIssueDAO();
     PDF xuatPDF= new PDF();
-    ObservableList<bookIssueDTO> issueList;
+    static ObservableList<bookIssueDTO> issueList;
     {
         try{
             issueList = bookIssueDAO.readIssueBookListDAO();
@@ -42,7 +43,7 @@ public class bookIssueController implements Initializable {
             e.printStackTrace();
         }
     }
-    ObservableList<Book> bookList;
+    static ObservableList<Book> bookList;
     {
         try{
             bookList = bookIssueDAO.readBookListDAO();
@@ -52,7 +53,7 @@ public class bookIssueController implements Initializable {
         }
     }
 
-    ObservableList<MemberDTO> memberList;
+    static ObservableList<MemberDTO> memberList;
     {
         try{
             memberList = bookIssueDAO.readMemberListDAO();
@@ -237,10 +238,10 @@ public class bookIssueController implements Initializable {
             bookIssueDTO issue = new bookIssueDTO(
                     setIssueID(),
                     memberIDText.getText(),
-                    "IDNV1",
+                    LoginController.nhanVien.getIDNhanVien(),
                     issueDate.getValue(),
                     returnDate.getValue(),
-                    "",
+                    noteTextArea.getText(),
                     bookIDText.getText()
 
             );
