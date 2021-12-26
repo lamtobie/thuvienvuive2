@@ -32,6 +32,7 @@ public class LoginController implements Initializable {
     TextField userField;
     @FXML
     PasswordField passField;
+    public static NhanVienDTO nhanVien = new NhanVienDTO();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setIcon();
@@ -51,6 +52,7 @@ public class LoginController implements Initializable {
         TaiKhoanBUS accountBUS=new TaiKhoanBUS();
         int kq=accountBUS.login(Acc);
         if(kq==1){
+            nhanVien = accountBUS.accountInfo(Acc);
             Stage stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
             FXMLLoader loader=new FXMLLoader();
             loader.setLocation(UserController.class.getResource("UserSample.fxml"));
@@ -65,6 +67,7 @@ public class LoginController implements Initializable {
             stage.setTitle("Dashboard User");
             System.out.printf("user");
         }else if(kq==2){
+            nhanVien = accountBUS.accountInfo(Acc);
             Stage stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
             FXMLLoader loader=new FXMLLoader();
             loader.setLocation(AdminController.class.getResource("AdminSample.fxml"));
