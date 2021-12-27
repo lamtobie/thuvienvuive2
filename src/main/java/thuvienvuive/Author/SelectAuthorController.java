@@ -27,6 +27,7 @@ import java.net.URL;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
+
 import thuvienvuive.Author.*;
 import thuvienvuive.Book.AddBookController;
 import thuvienvuive.Database.ConnectDB;
@@ -80,10 +81,15 @@ public class SelectAuthorController implements Initializable {
         }
     }
     public void exit(ActionEvent event) {
+    
+    	  FXMLLoader loader;
     	stage = (Stage)((Button)event.getSource()).getScene().getWindow();
-	
-       FXMLLoader loader = new FXMLLoader(AddBookController.class.getResource("AddNewBook.fxml"));
-              Scene scene = null;
+	if(AddBookController.trangthai == null) {
+		   loader  = new FXMLLoader(AddBookController.class.getResource("AddNewBook.fxml"));
+	}else {
+		 loader  = new FXMLLoader(AddBookController.class.getResource("EditBook.fxml"));
+	}
+	Scene scene = null;
 		try {
 			scene = new Scene(loader.load());
 		} catch (IOException e) {
@@ -147,7 +153,13 @@ public class SelectAuthorController implements Initializable {
 		AddBookController.authorName="";
 	}
        	 Stage stage = (Stage)((Button)e.getSource()).getScene().getWindow();
-                    FXMLLoader loader = new FXMLLoader(AddBookController.class.getResource("AddNewBook.fxml"));
+       	 FXMLLoader loader;
+       	if(AddBookController.trangthai == null) {
+ 		   loader  = new FXMLLoader(AddBookController.class.getResource("AddNewBook.fxml"));
+ 	}else {
+ 		 loader  = new FXMLLoader(AddBookController.class.getResource("EditBook.fxml"));
+ 	}
+                   
                    Scene scene = new Scene(loader.load());        
           stage.setScene(scene);
           stage.centerOnScreen();
