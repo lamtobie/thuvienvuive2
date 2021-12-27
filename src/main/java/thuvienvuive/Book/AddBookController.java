@@ -42,6 +42,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
+
 import thuvienvuive.Author.Author;
 import thuvienvuive.Author.AuthorController;
 import thuvienvuive.Author.SelectAuthorController;
@@ -50,7 +51,7 @@ import thuvienvuive.Database.ConnectDB;
 public class AddBookController implements Initializable {
 	public static String authorName = "";
 	static ObservableList<String> cacheList = FXCollections.observableArrayList();
-
+     public static String trangthai = null;
     @FXML
     ImageView bookIcon;
     @FXML
@@ -175,6 +176,7 @@ public class AddBookController implements Initializable {
 	}
     @FXML
     public void choiceAuthor(ActionEvent event) throws Exception {  
+    	
     	
 if(ngayNhap.getValue()==null && ngayXB.getValue() != null) {
 	 AddBookController.setCo("ngaynhap"); 
@@ -428,7 +430,7 @@ stage.close();
 
   
         // Sét thư mục bắt đầu nhìn thấy khi mở FileChooser
-        fileChooser.setInitialDirectory(new File("D:/"));
+        fileChooser.setInitialDirectory(new File("D:/Ảnh"));
 
   
         // Thêm các bộ lọc file vào
@@ -523,6 +525,10 @@ stage.close();
 		}
     }
     
+public static void changeStatus(String abc)
+{
+	AddBookController.trangthai=abc;
+}
 
 
 }
